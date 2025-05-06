@@ -1,6 +1,6 @@
-import { createContext } from "react";
+import { createContext, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+
 
 export const AppContext = createContext();
 
@@ -10,13 +10,16 @@ export const AppContextProvider = ({ children }) => {
 
   const [user,setUser] = useState(null);
   const [isSeller,setIsSeller] = useState(false);
+  const [showUserLogin,setShowUserLogin] = useState(false);
 
   const value = {
     navigate,
     user,
     setUser,
     isSeller,
-    setIsSeller
+    setIsSeller,
+    showUserLogin,
+    setShowUserLogin
 
   }
 
@@ -25,7 +28,7 @@ export const AppContextProvider = ({ children }) => {
   </AppContext.Provider>
 }
 
-export const useContext = () => {
+export const useAppContext = () => {
 
   return useContext(AppContext)
 
