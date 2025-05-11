@@ -10,8 +10,6 @@ const SellerLayout = () => {
     setIsSeller(false);
   }
 
-
-
     const sidebarLinks = [
         { name: "Add Product", path: "/seller", icon: assets.add_icon },
         { name: "Product List", path: "/seller/product-list", icon: assets.product_list_icon },
@@ -34,7 +32,7 @@ const SellerLayout = () => {
                 {sidebarLinks.map((item) => (
                     <NavLink to={item.path} key={item.name} end={item.path === "/seller"}
                         className={({isActive})=> `flex items-center py-3 px-4 gap-3 
-                            ${isActive ? "border-r-4 md:border-r-[6px] bg-primary/10 border-primary text-indigo-500"
+                            ${isActive ? "border-r-4 md:border-r-[6px] bg-primary/10 border-primary text-primary"
                                 : "hover:bg-gray-100/90 border-white"
                             }`
                         }
